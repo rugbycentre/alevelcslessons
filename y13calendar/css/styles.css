@@ -1,0 +1,271 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Legend */
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9em;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+/* Timeline */
+.timeline {
+    padding: 30px;
+}
+
+.week-block {
+    margin-bottom: 30px;
+    border-left: 4px solid #3498db;
+    padding-left: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.week-block:hover {
+    border-left-color: #2980b9;
+    transform: translateX(5px);
+}
+
+.week-block::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background: #3498db;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px white, 0 0 0 6px #3498db;
+}
+
+.week-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.week-number {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.week-date {
+    color: #7f8c8d;
+    font-size: 0.95em;
+}
+
+.topic-main {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+/* Lessons Grid */
+.lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.lesson-card {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #3498db;
+    transition: all 0.3s ease;
+}
+
+.lesson-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.lesson-number {
+    font-weight: bold;
+    color: #3498db;
+    margin-bottom: 5px;
+}
+
+.lesson-content {
+    color: #34495e;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+/* Card Types */
+.assessment {
+    background: #fff3cd;
+    border-left-color: #ffc107;
+}
+
+.exam {
+    background: #f8d7da;
+    border-left-color: #dc3545;
+}
+
+.revision {
+    background: #d1ecf1;
+    border-left-color: #17a2b8;
+}
+
+.practice {
+    background: #d4edda;
+    border-left-color: #28a745;
+}
+
+.study-leave {
+    background: #e2e3e5;
+    border-left-color: #6c757d;
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.badge-assessment {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.badge-exam {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.badge-revision {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.badge-practice {
+    background: #d4edda;
+    color: #155724;
+}
+
+.badge-study {
+    background: #e2e3e5;
+    color: #383d41;
+}
+
+/* Current Week Highlight */
+.current-week {
+    border-left-color: #e74c3c;
+    background: #fff5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: -20px;
+}
+
+.current-week::before {
+    background: #e74c3c;
+    box-shadow: 0 0 0 4px white, 0 0 0 6px #e74c3c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .lessons-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    body {
+        padding: 10px;
+    }
+    
+    .timeline {
+        padding: 15px;
+    }
+    
+    .week-block {
+        padding-left: 15px;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    
+    .container {
+        box-shadow: none;
+    }
+    
+    .week-block:hover {
+        transform: none;
+    }
+    
+    .lesson-card:hover {
+        transform: none;
+    }
+}
